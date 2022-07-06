@@ -27,7 +27,7 @@ def index():
     if request.method == "POST":
         rates = float(request.form.get("rates"))
         print(rates)
-        model = joblib.load("C:/Users/Zky/Desktop/NTU/week-1/regression")
+        model = joblib.load("regression")
         r = model.predict([[rates]])
         print(r)
         return render_template("index.html", result = r)
